@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PWEDE BA KITA LIGAWAN ULET? 😼</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="envlope-wrapper">
+  <div id="envelope" class="close">
+    <div class="front flap"></div>
+    <div class="front pocket"></div>
+    <div class="letter">
+      <div class="words line1"></div>
+      <div class="words line2"></div>
+      <div class="words line3"></div>
+      <div class="words line4"></div>
+    </div>
+    <div class="hearts">
+      <div class="heart a1"></div>
+      <div class="heart a2"></div>
+      <div class="heart a3"></div>
+    </div>
+  </div>
+</div>
+
+<div class="reset">
+  <button id="open">Open</button>
+  <button id="reset">Reset</button>
+</div>
+
+<!-- Pop-up message -->
+<div class="popup-text" id="popupMessage">
+  Hello my dear mabyyy, it's our <b>1ST MONTHSARRY!!</b>, and i'm very happy about it, and that we reach our first milestone, and there will be more months to come until it reaches to anniversary, and I can't wait for it to happen. It was definitely an unexpected relationship from kupal na kaibigan to now being your boyfriend but yeah i ain't complaining 😼. <b>Iloveyouuveruumuchhh virridis / HANNAH.</b>
+  <br>
+  <br>
+  <br>
+    yours truly,
+    Shinichi 🐱.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('bgMusic');
+    
+    audio.addEventListener('loadedmetadata', function () {
+      audio.currentTime = 11; // Skip to 11 seconds
+    });
+
+    audio.play().catch((e) => {
+      console.log("Autoplay blocked. User interaction may be required.");
+    });
+  });
+</script>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</body>
+</html>
