@@ -221,7 +221,7 @@ body {
 /* Pop-up Text Styles */
 .popup-text {
   position: fixed;
-  top: 50%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffe4ec;
