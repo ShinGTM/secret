@@ -4,9 +4,70 @@
   <meta charset="UTF-8">
   <title>PWEDE BA KITA LIGAWAN ULET? 😼</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* hide scrollbars */
+      font-family: Arial, sans-serif;
+    }
+
+    /* === FULLSCREEN SCROLLING BACKGROUND === */
+    .bg-scroll {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%; /* double screen height for looping */
+      animation: scrollUp 30s linear infinite;
+      z-index: -1; /* keep behind everything */
+    }
+
+    .bg-scroll img {
+      width: 100%;
+      height: 100vh; /* each image fills the screen */
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes scrollUp {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    /* === POPUP MESSAGE STYLE (YOURS) === */
+    .popup-text {
+      position: relative;
+      z-index: 5;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      margin: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-size: 16px;
+      color: darkgreen;
+    }
+  </style>
 </head>
 <body>
 
+<!-- === MOVING BACKGROUND IMAGES === -->
+<div class="bg-scroll">
+  <!-- Replace these with your own images -->
+  <img src="photo1.png" alt="Memory 1">
+  <img src="photo2.png" alt="Memory 2">
+  <img src="photo3.png" alt="Memory 3">
+  <img src="photo4.png" alt="Memory 4">
+
+  <!-- duplicate images for infinite loop -->
+  <img src="photo1.png" alt="Memory 1">
+  <img src="photo2.png" alt="Memory 2">
+  <img src="photo3.png" alt="Memory 3">
+  <img src="photo4.png" alt="Memory 4">
+</div>
+
+<!-- === YOUR ORIGINAL ENVELOPE CODE === -->
 <div class="envlope-wrapper">
   <div id="envelope" class="close">
     <div class="front flap"></div>
@@ -30,35 +91,37 @@
   <button id="reset">Reset</button>
 </div>
 
-<!-- Pop-up message -->
+<!-- === POP-UP MESSAGE (YOURS) === -->
 <div class="popup-text" id="popupMessage">
-  Hello my dear virridis, it's our <b>1ST MONTHSARRY!!</b>, and i'm very happy about it, and that we reach our first milestone, and there will be more months to come until it reaches to anniversary, and I can't wait for it to happen. It was definitely an unexpected relationship from kupal na kaibigan to now being your boyfriend but yeah i ain't complaining 😼. <b>Iloveyouuveruumuchhh virridis / HANNAH.</b>
-  <br>
-  <br>
-  <br>
-    yours truly,
-    Shinichi 🐱.
+  Hello my dear virridis, it's our <b>1ST MONTHSARRY!!</b>, and i'm very happy about it, 
+  and that we reach our first milestone, and there will be more months to come until it reaches to anniversary, 
+  and I can't wait for it to happen. It was definitely an unexpected relationship from kupal na kaibigan to now being your boyfriend 
+  but yeah i ain't complaining 😼. <b>Iloveyouuveruumuchhh virridis / HANNAH.</b>
+  <br><br><br>
+  yours truly,<br>
+  Shinichi 🐱.
 </div>
+
+<!-- === MUSIC === -->
+<audio id="bgMusic" loop>
+  <source src="secret.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="script.js"></script>
 <script>
+  // Background music
   window.addEventListener('DOMContentLoaded', function () {
     const audio = document.getElementById('bgMusic');
-    
     audio.addEventListener('loadedmetadata', function () {
       audio.currentTime = 11; // Skip to 11 seconds
     });
-
-    audio.play().catch((e) => {
+    audio.play().catch(() => {
       console.log("Autoplay blocked. User interaction may be required.");
     });
   });
 </script>
 
-<audio id="bgMusic" loop>
-  <source src="secret.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 </body>
-</html>
+  </html>
